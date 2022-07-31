@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Sergiy
+Build-Jdk: 18.0.1
+Implementation-Title: finalProject
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: polikarpov.finalProject
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/finalProject
+Created-By: Maven Integration for Eclipse
+
