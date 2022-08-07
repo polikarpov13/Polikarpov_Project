@@ -5,7 +5,7 @@
 <head>
 <link href="css/app.css"rel="stylesheet"
 	type="text/css"></link>
-<title>Spring Security Example - ProgrammingFree</title>
+<title>NOT PERMITTED</title>
 </head>
 <body class="security-app">
 	
@@ -14,8 +14,8 @@
 			<h3>You do not have permission to access this page!</h3>	
 		</div>
 		<form action="/logout" method="post">
-			<input type="submit" class="button red big" value="Sign in as different user" /> <input
-				type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			<input type="submit" class="button red big" value="Sign in as different user" /> 
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		</form>		
 	</div>	
 </body>

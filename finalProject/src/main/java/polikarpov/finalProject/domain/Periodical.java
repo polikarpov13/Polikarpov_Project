@@ -1,12 +1,27 @@
 package polikarpov.finalProject.domain;
 
-import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "periodical")
 public class Periodical {
-
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	
+	@Column
 	private String name;
+	
+	@Column
 	private String description;
+	
+	@Column
 	private Double price;
 
 	public Periodical() {
@@ -59,7 +74,13 @@ public class Periodical {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(description, id, name, price);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((description == null) ? 0 : description.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((price == null) ? 0 : price.hashCode());
+		return result;
 	}
 
 	@Override
@@ -71,13 +92,31 @@ public class Periodical {
 		if (getClass() != obj.getClass())
 			return false;
 		Periodical other = (Periodical) obj;
-		return Objects.equals(description, other.description) && Objects.equals(id, other.id)
-				&& Objects.equals(name, other.name) && Objects.equals(price, other.price);
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (price == null) {
+			if (other.price != null)
+				return false;
+		} else if (!price.equals(other.price))
+			return false;
+		return true;
 	}
 
 	@Override
 	public String toString() {
 		return "Periodical [id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + "]";
 	}
-
 }
