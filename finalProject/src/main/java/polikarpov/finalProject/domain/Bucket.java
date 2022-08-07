@@ -1,6 +1,6 @@
 package polikarpov.finalProject.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,6 +30,10 @@ public class Bucket {
 	private Date purchaseDate;
 
 	public Bucket() {
+	}
+	
+	public Bucket(Integer id) {
+		this.id = id;
 	}
 
 	public Bucket(User user, Periodical periodical, Date purchaseDate) {

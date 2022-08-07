@@ -23,5 +23,9 @@ public class UserService{
         user.setRole(UserRole.ROLE_USER);
         userRepository.save(user);
     }
+    
+    public User findByEmail(String email) {
+    	return userRepository.findByEmail(email).get();
+    }
 
 }
