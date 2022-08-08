@@ -1,5 +1,7 @@
 package polikarpov.finalProject.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,9 @@ import polikarpov.finalProject.domain.UserRole;
 
 @Service
 public class UserService{
+	
+	private Logger logger = LoggerFactory.getLogger(PeriodicalsService.class);
+	
     @Autowired
     private UserRepository userRepository;
 
@@ -18,6 +23,7 @@ public class UserService{
 
 
     public void save(User user) {
+    	logger.debug("Create user object : " + user);
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setPassword(bCryptPasswordEncoder.encode(user.getPasswordConfirm()));
         user.setRole(UserRole.ROLE_USER);
@@ -25,6 +31,7 @@ public class UserService{
     }
     
     public User findByEmail(String email) {
+    	logger.debug("Get user object by email : " + email);
     	return userRepository.findByEmail(email).get();
     }
 
