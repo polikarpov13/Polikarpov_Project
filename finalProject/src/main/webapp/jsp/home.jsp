@@ -17,15 +17,13 @@
 <meta name="author" content="">
 
 <title>Periodicals</title>
-
-<link href="${contextPath}/resources/css/bootstrap.min.css"
-	rel="stylesheet">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 	<div class="container">
 
 
+		<!-- Sidebar -->
 		<div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 10%">
 			<h3 class="w3-bar-item">Menu</h3>
 			<a href="/home" class="w3-bar-item w3-button">Home</a>
@@ -86,7 +84,6 @@
 										value="+ add to bucket">
 								</form:form>
 							</security:authorize>
-
 
 
 
