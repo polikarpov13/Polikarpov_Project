@@ -12,12 +12,7 @@ import polikarpov.finalProject.domain.UserRole;
 
 @Service
 public class UserService{
-	
-<<<<<<< HEAD
-	private Logger logger = LoggerFactory.getLogger(PeriodicalsService.class);
-=======
 	private Logger logger = LoggerFactory.getLogger(UserService.class);
->>>>>>> refs/remotes/origin/ts-5-role-acess-ui
 	
     @Autowired
     private UserRepository userRepository;
